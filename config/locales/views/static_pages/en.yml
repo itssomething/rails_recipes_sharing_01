@@ -1,0 +1,12 @@
+en:
+  static_pages:
+    home:
+      today: "What will we cook today ?"
+      description: "We will bring you the most suitable options"
+      trending: "Trending recipes"
+      recipe_by: "recipe by"
+      search_placeholder: "Over 10000+ recipes , ..."
+      top_member: "Top Member"
+      hour: "hour"
+      recipe: "recipe"
+      followers: "followers"

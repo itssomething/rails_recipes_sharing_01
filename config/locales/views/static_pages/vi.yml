@@ -1,0 +1,13 @@
+vi:
+  static_pages:
+    home:
+      today: "Hôm nay ăn gì ?"
+      description: "Chúng tôi sẽ mang đến cho bạn những lựa chọn phù hợp nhất"
+      trending: "Công thức nổi bật"
+      recipe_by: "công thức bởi"
+      search_placeholder: "Hơn 10000+ công thức, ..."
+      top_member: "Top thành viên"
+      hour: "giờ"
+      recipe: "công thức"
+      followers: "người theo dõi"
+

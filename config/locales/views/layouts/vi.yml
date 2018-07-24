@@ -1,0 +1,21 @@
+vi:
+  layouts:
+    header:
+      home: "Trang chủ"
+      recipe: "Công thức"
+      top_member: "Top thành viên"
+      create_recipe: "Tạo công thức"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
+      signup: "Đăng kí"
+    footer:
+      recipe: "Công thức"
+      members: "thành viên"
+      signup: "Đăng kí"
+      feedback: "Góp ý"
+      contact: "Liên hệ"
+      about: "Giới thiệu"
+      forgot_password: "Quên mật khẩu"
+      report: "Báo lỗi"
+      available: "Chúng tôi có mặt tại"
+      statistics: "Thống kê"
