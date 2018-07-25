@@ -1,5 +1,17 @@
 vi:
   recipes:
+    new:
+      name: "Tên"
+      description: "Mô tả"
+      purpose: "Mục đích"
+      ready_in: "Sẵn sàng trong bao nhiêu phút"
+      difficult_level: Độ khó
+      people_num: "Số người ăn"
+      ingredient: "Nguyên liệu"
+      add_ingredient: "Them nguyên liệu"
+      steps: "Các bước: "
+      add_step: "Thêm bước"
+      submit: "Gửi công thức"
     show:
       cant_find: "Không thể tìm thấy công thức này"
       recipe: "công thức"

@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_07_27_062443) do
   end
 
   create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.string "amount"
     t.string "measurement"
     t.datetime "created_at", null: false

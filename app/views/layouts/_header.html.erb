@@ -1,5 +1,5 @@
 <!-- START NAVBAR -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav nav-pills">
@@ -10,20 +10,25 @@
           <a href="#" class="active">
             <i class="fa fa-home"></i> <%= t ".home" %></a>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-cutlery"></i> <%= t ".recipe" %></a>
+
+        <li><%= link_to new_recipe_path do %>
+          <i class="fa fa-cutlery"></i>
+          <span><%= t ".recipe" %></span>
+        <% end %>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-users"></i> <%= t ".top_member" %></a>
+
+        <li><%= link_to "#" do %>
+          <i class="fa fa-users"></i>
+          <span><%= t ".top_member" %></span>
+        <% end %>
         </li>
       </ul>
 
       <!-- NAVBAR RIGHT -->
       <ul class="nav navbar-nav navbar-right">
-        <a href="#" class="btn btn-default navbar-btn">
+        <%= link_to new_recipe_path, class: "btn btn-default navbar-btn" do %>
           <i class="fa fa-plus-square"></i> <%= t ".create_recipe" %></a>
+        <% end %>
         <a href="#" class="btn btn-default navbar-btn">
           <i class="fa fa-sign-out"></i> <%= t ".logout" %></a>
         <a href="#" class="btn btn-default navbar-btn">
