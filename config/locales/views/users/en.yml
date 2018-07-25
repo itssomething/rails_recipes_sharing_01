@@ -1,0 +1,22 @@
+en:
+  users:
+    show:
+      follower: "follower"
+      like: "like"
+      email: "Email"
+      address: "Address"
+      joined_at: "Joined at"
+      manage_account: "Manage account"
+      recipe: "recipe"
+      cant_find: "User not found !"
+    edit:
+      title: "Update user"
+      address: "Address"
+      name: "Name"
+      email: "Email"
+      avatar: "Avatar"
+      submit: "Submit"
+      back: "Back"
+    update:
+      save_success: "Update success."
+      save_failed: "Update failed."

@@ -1,0 +1,26 @@
+<h1 class="text-center"><%= t ".title" %></h1>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="well">
+      <%= form_for @user do |f| %>
+        <%= f.label :name, t(".name") %>
+        <%= f.text_field :name, class: "form-control" %>
+
+        <%= f.label :address, t(".address") %>
+        <%= f.text_field :address, class: "form-control" %>
+
+        <%= f.label :email, t(".email") %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :avatar, t(".avatar") %>
+        <%= f.file_field :avatar %>
+        <br>
+        <%= f.submit t(".submit"), class: "btn btn-primary" %>
+        <%= link_to t(".back"), @user , class: "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

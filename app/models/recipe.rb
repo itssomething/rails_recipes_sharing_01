@@ -4,4 +4,5 @@ class Recipe < ApplicationRecord
   has_many :category_recipes, dependent: :destroy
 
   accepts_nested_attributes_for :steps
+  scope :desc, ->{order created_at: :desc}
 end
