@@ -3,11 +3,15 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 gem "bootsnap", ">= 1.1.0", require: false
+gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "coffee-rails", "~> 4.2"
+gem "config"
+gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem "kaminari"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"

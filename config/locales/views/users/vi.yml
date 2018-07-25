@@ -1,0 +1,22 @@
+vi:
+  users:
+    show:
+      follower: "người theo dõi"
+      like: "lượt thích"
+      email: "Email"
+      address: "Địa chỉ"
+      joined_at: "Tham gia vào"
+      manage_account: "Quản lí tài khoản"
+      recipe: "công thức"
+      cant_find: "Không thể tìm thấy người dùng này"
+    edit:
+      title: "Cập nhật thông tin tài khoản"
+      address: "Địa chỉ"
+      name: "Tên"
+      email: "Email"
+      avatar: "Ảnh đại diện"
+      submit: "Cập nhật"
+      back: "Quay lại"
+    update:
+      save_success: "Cập nhật thành công"
+      save_failed: "Cập nhật thất bại"

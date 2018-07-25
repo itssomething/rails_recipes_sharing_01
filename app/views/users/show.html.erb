@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag(@user.avatar,
+        class: "img-responsive img-circle center-block") %>
+      <h1 class="text-center"><%= @user.name %></h1>
+        <ul class="list-inline text-center">
+          <li><i class="fa fa-users fa-2x"></i><br>5 <%=t ".follower" %></li>
+          <li><i class="fa fa-thumbs-up fa-2x"></i><br><%= t ".like" %></li>
+        </ul>
+      <p><i class="fa fa-envelope"></i>
+        <b><%= t ".email" %>:</b> <%= @user.email %>
+      </p>
+      <p><i class="fa fa-address-card"></i>
+        <b><%= t ".address" %>: </b> <%= @user.address %>
+      </p>
+      <p><i class="fa fa-calendar-check-o"></i>
+        <%= t ".joined_at" %> <%= @user.created_at.strftime("%d/%m/%Y") %>
+      </p>
+      <%= link_to edit_user_path, class: "btn btn-primary center-block" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <%= t ".manage_account" %>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <h2><b><%= @user.recipes.count %></b> <%= t ".recipe" %></h2>
+        <% @recipes.each do |recipe| %>
+        <div class="col-md-6">
+          <div class="well" style="width: 440px">
+            <div class="row">
+                <div class="col-md-4">
+                  <img src="http://via.placeholder.com/300x300"
+                    class="img-responsive">
+                </div>
+                <div class="col-md-8">
+                  <h4><a href="#"><%= recipe.name %></a></h4>
+                  <p>
+                    <%= truncate recipe.description,
+                    length: Settings.truncate_description %>
+                  </p>
+                  <div class="reaction-field pull-right">
+                    <button class="btn btn-sm">
+                      <i class="fa fa-heart-o"></i> 6
+                    </button>
+                    <button class="btn btn-sm btn-primary">
+                      <i class="fa fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <%= paginate @recipes, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>

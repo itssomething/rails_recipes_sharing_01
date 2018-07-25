@@ -1,0 +1,7 @@
+vi:
+  views:
+    pagination:
+      next: "Tiếp"
+      last: "Cuối cùng"
+      first: "Đầu tiên"
+      previous: "Trước"
