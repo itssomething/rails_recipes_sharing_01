@@ -1,0 +1,8 @@
+<h3>Ingredients</h3>
+<%= f.fields_for :recipe_ingredients do |ff| %>
+  <div>
+    <%= ff.label :temp, "Content of ingredient", class: "field-label" %>
+    <%= ff.text_field :temp, class: "form-control field-input" %>
+  </div>
+    <%= link_to_add_fields "Add Ingredient", ff, :recipe_ingredients %>
+<% end %>

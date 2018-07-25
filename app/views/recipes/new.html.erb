@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @recipe do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :name, class: "field-label" %>
+      <%= f.text_field :name, class: "form-control field-input" %>
+
+      <div class="btn btn-large btn-warning btn-file">
+        Them hinh anh
+        <%= file_field_tag :cover_photo %>
+      </div>
+      <br>
+
+      <%= f.label :description, class: "field-label" %>
+      <%= f.text_area :description, class: "form-control field-input" %>
+
+      <%= f.label :purpose, class: "field-label" %>
+      <%= f.text_area :purpose, class: "form-control field-input" %>
+
+      <%= f.label :ready_in, class: "field-label" %>
+      <%= f.text_field :ready_in, class: "form-control field-input" %>
+
+      <%= f.label :difficult_level, class: "field-label" %>
+      <%= f.text_field :difficult_level, class: "form-control field-input" %>
+
+      <h3>Ingredients</h3>
+      <%= f.fields_for :recipe_ingredients do |ff| %>
+        <%#= NORMAL FIELD %>
+        <div>
+          <%= ff.label :temp, "Content of ingredient", class: "field-label" %>
+          <%= ff.text_field :temp, class: "form-control field-input" %>
+        </div>
+      <% end %>
+
+      <button type="button" class="btn btn-danger ">Add ingredient</button>
+
+      <h3>Steps</h3>
+      <%= f.fields_for :steps do |fff| %>
+        <p>
+          <%= fff.label :content, "Step " %>
+          <%= fff.text_area :content, class: "form-control field-input" %>
+        </p>
+      <% end %>
+
+        <button type="button" class="btn btn-danger" id="add-step">
+          Add step
+        </button>
+
+      <%# testing area %>
+      <%#= form_for @create_step do |f| %>
+        <%#= f.submit "add step", class: "btn btn-success" %>
+      <%# end %>
+      <%#= link_to "add steps", recipes_addstep_path, remote: true%>
+      <%# byebug %>
+
+      <%= f.submit "Submit", class: "btn btn-primary submit-button" %>
+    <% end %>
+  </div>
+</div>

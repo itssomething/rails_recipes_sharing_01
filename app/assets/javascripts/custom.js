@@ -27,5 +27,13 @@ $(document).ready(function () {
     for (i = 1; i <= no_ingredients; i++) {
       $(".ingredient-amount-" + i).text(new_amounts[i]);
     }
+  })
+});
+
+$(document).on('turbolinks:load', function() {
+  $('.form-control.field-input').bind('input', function() {
+    if($(this).val().length > 0){
+      $(this).parent().removeClass('field_with_errors');
+    }
   });
 });

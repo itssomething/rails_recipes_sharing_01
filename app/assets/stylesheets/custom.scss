@@ -28,3 +28,58 @@
   width: 175px;
   height: 175px;
 }
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: black;
+  }
+}
+
+.field_with_errors{
+  .form-control :focus{
+    outline: none !important;
+    border: 1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+  }
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.btn.btn-large.btn-warning.btn-file {
+  margin: -20px 0 30px;
+  float: right;
+}
+
+.navbar-left.img-responsive {
+  img{
+    max-width: 150px;
+  }
+}

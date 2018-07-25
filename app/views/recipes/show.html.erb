@@ -3,10 +3,10 @@
     <div class="col-md-2">
       <div class="sidebar-nav-fixed affix user-info">
         <div class="well center-block text-center">
-            <%= image_tag @user.avatar.url,
+            <%#= image_tag @user.avatar.url,
               class: "img-responsive img-rounded" %>
-            <p><b><%= @user.name %></b></p>
-            <p><%= @user.recipes.count %> <%= t ".recipe" %></p>
+            <p><b><%#= @user.name %></b></p>
+            <p><%#= @user.recipes.count %> <%= t ".recipe" %></p>
             <p>? <%= t ".follower" %></p>
             <button class="btn btn-sm"><%= t ".follow" %></button>
         </div>
@@ -77,7 +77,7 @@
           |ingredient, index| %>
             <div class="col-md-6">
                 <p><i class="fa fa-check-circle-o fa-2x ingredient-item"></i>
-                  <b><%= ingredient.ingredient_name %></b>
+                  <b><%= ingredient.name %></b>
                   <span class="ingredient-amount-<%= index + 1 %>">
                     <%= ingredient.amount %>
                   </span>
