@@ -28,3 +28,26 @@
   width: 175px;
   height: 175px;
 }
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: black;
+  }
+}
+
+.field_with_errors{
+  .form-control :focus{
+    outline: none !important;
+    border: 1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+  }
+}

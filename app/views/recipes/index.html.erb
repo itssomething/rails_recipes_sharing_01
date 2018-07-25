@@ -1,0 +1,9 @@
+<ul class="recipes">
+  <% @recipes.each do |recipe| %>
+    <li>
+      <%= link_to recipe.name, recipe %>
+      <%= recipe.description %>
+      <%#= recipe.find(recipe.id).steps.select(:id, :content) %>
+    </li>
+  <% end %>
+</ul>

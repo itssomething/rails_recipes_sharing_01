@@ -5,6 +5,10 @@ class Recipe < ApplicationRecord
   has_many :category, through: :category_recipes
   belongs_to :user
 
-  accepts_nested_attributes_for :steps
   scope :desc, ->{order created_at: :desc}
+
+  accepts_nested_attributes_for :steps, allow_destroy: true
+  accepts_nested_attributes_for :recipe_ingredients, allow_destroy: true
+
+  validates :name, :description, :purpose, :ready_in, :difficult_level, presence: true
 end

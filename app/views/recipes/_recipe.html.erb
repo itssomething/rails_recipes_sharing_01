@@ -1,0 +1,23 @@
+<div><%= recipe.id %></div>
+<div>
+  <div>Name</div>
+  <%= recipe.name %>
+</div>
+<div>
+  <div>Desciption</div>
+  <%= recipe.description %>
+</div>
+<div>
+  <div>Steps</div>
+  <% recipe.steps.each do |step| %>
+    <%= step.content %>
+  <% end %>
+</div>
+<div>
+  <div>Ingredients</div>
+  <% recipe.recipe_ingredients.each do |ing| %>
+    <div>
+      <span><%= ing.name %> <%= ing.amount %> <%= ing.measurement %></span>
+    </div>
+  <% end %>
+</div>
