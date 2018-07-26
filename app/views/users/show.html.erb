@@ -1,8 +1,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <%= image_tag(@user.avatar,
-        class: "img-responsive img-circle center-block") %>
+      <% if @user.avatar.url %>
+        <%= image_tag(@user.avatar.to_s,
+          class: "img-responsive img-circle center-block avatar-show") %>
+      <% else %>
+        <%= image_tag("default_avatar.png",
+          class: "img-responsive img-circle center-block",
+          size: "#{Settings.img_size_fill}x#{Settings.img_size_fill}") %>
+      <% end %>
       <h1 class="text-center"><%= @user.name %></h1>
         <ul class="list-inline text-center">
           <li><i class="fa fa-users fa-2x"></i><br>5 <%=t ".follower" %></li>

@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  mount_uploader :avatar, AvatarUploader
+
   before_save :email_downcase
 
   validates :name, presence: true,
@@ -23,12 +25,18 @@ class User < ApplicationRecord
             uniqueness: {case_sensitive: false}
   validates :password, presence: true,
             length: {minimum: Settings.password_min_length}, allow_nil: true
-
+  validate :avatar_size
   has_secure_password
 
   private
 
   def email_downcase
     email.downcase!
+  end
+
+  def avatar_size
+    if avatar.size > Settings.max_file.megabytes
+      errors.add :avatar, t(".over_limit_file_size")
+    end
   end
 end

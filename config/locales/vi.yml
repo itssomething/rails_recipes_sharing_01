@@ -1,3 +1,7 @@
 vi:
   errors:
+    messages:
+      extension_whitelist_error: "File tải lên không đúng định dạng"
+      mini_magick_processing_error: "Có lỗi xảy ra trong quá trình upload.
+        Vui lòng thử lại."
     format: "%{message}"
