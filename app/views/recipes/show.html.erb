@@ -1,0 +1,150 @@
+  <div class="row">
+    <!-- START USER -->
+    <div class="col-md-2">
+      <div class="sidebar-nav-fixed affix user-info">
+        <div class="well center-block text-center">
+            <%= image_tag @user.avatar.url,
+              class: "img-responsive img-rounded" %>
+            <p><b><%= @user.name %></b></p>
+            <p><%= @user.recipes.count %> <%= t ".recipe" %></p>
+            <p>? <%= t ".follower" %></p>
+            <button class="btn btn-sm"><%= t ".follow" %></button>
+        </div>
+      </div>
+
+    </div>
+    <!-- END USER -->
+
+    <!-- START RECIPE -->
+    <div class="col-md-7">
+      <div class="well main-recipe">
+        <img src="https://bit.ly/2mK5wZg" class="img-responsive">
+        <h1><%= t ".making" %><%= @recipe.name %></h1>
+        <p><%= @recipe.description %></p>
+
+        <div class="row text-center">
+          <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <h4> <%= t ".ingredient" %></h4>
+            <h5 class="no_ingredients">
+              <%= @recipe.recipe_ingredients.count %>
+            </h5>
+          </div>
+          <div class="col-md-2">
+            <h4><%= t ".serving" %></h4>
+            <h5 id = "current-people">
+              <%= @recipe.people_num %><%= t ".people" %>
+            </h5>
+          </div>
+          <div class="col-md-2">
+            <h4><%= t ".ready_in" %></h4>
+            <h5><%= @recipe.ready_in %><%= t ".hour" %></h5>
+          </div>
+          <div class="col-md-2">
+            <h4><%= t ".level" %></h4>
+            <h5><%= @recipe.difficult_level %></h5>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+      <!-- INGREDIENT -->
+      <div class="well main-recipe">
+          <div class="row">
+            <div class="col-md-8">
+              <h3><%= t ".ingredient_to_make" %><%= @recipe.name %></h3>
+              <p>
+                <%= t ".for" %>
+                <b id = "no-people">
+                  <%= @recipe.people_num %>
+                </b>
+                <%= t ".people" %>
+              </p>
+            </div>
+            <div class="col-md-4 form-inline form-calc">
+              <i class="fa fa-cutlery"></i> <%= t ".meal" %>
+              <input id = "calc-amount" type="number" class="form-control"
+                value="<%= @recipe.people_num %>"
+                min="1" step="1" required="required">
+              <button type="button" id = "calc-btn" class="btn btn-danger">
+                <i class="fa fa-calculator"></i>
+              </button>
+            </div>
+          </div>
+
+        <hr>
+        <div class="row">
+          <% @recipe.recipe_ingredients.each_with_index do
+          |ingredient, index| %>
+            <div class="col-md-6">
+                <p><i class="fa fa-check-circle-o fa-2x ingredient-item"></i>
+                  <b><%= ingredient.ingredient_name %></b>
+                  <span class="ingredient-amount-<%= index + 1 %>">
+                    <%= ingredient.amount %>
+                  </span>
+                  <%= ingredient.measurement %>
+                  </span>
+                </p>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+      <!-- END INGREDIENT -->
+
+      <div class="well main-recipe">
+        <div class="row">
+          <div class="col-md-10">
+            <h1><%= t ".making" %> <%= @recipe.name %></h1>
+          </div>
+          <div class="col-md-2">
+            <h4><%= t ".ready_in" %></h4>
+            <h5><%= @recipe.ready_in %> <%= t ".hour" %></h5>
+          </div>
+        </div>
+        <hr>
+
+
+          <h2><%= t ".steps" %></h2>
+          <% step_no = 1 %>
+          <% @recipe.steps.each_with_index do |step, index| %>
+          <!-- LOOP HERE -->
+          <div class="row">
+            <div class="col-md-2 text-center">
+              <div class="well">
+                <p><b><%= t ".step" %></b></p>
+                <h1 class="step-order"><%= index + 1 %></h1>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <p><%= step.content %></p>
+              <div class="row">
+                <div class="col-md-6">
+                  <%= image_tag "http://via.placeholder.com/270x270",
+                    class: "img-responsive" %>
+                </div>
+                <div class="col-md-6">
+                  <%= image_tag "http://via.placeholder.com/270x270",
+                    class: "img-responsive" %>
+                </div>
+              </div>
+            </div>
+          <!-- END LOOP HERE -->
+          </div>
+          <hr><br><br>
+          <% end %>
+
+      </div>
+    </div>
+    <!-- END RECIPE -->
+
+    <!-- START SAME PURPOSE -->
+    <div class="col-md-3">
+      <div class="sidebar-nav-fixed pull-right affix">
+        <div class="well same-purpose">
+          <p><b><%= t ".same_purpose" %></b></p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <!-- END SAME PURPOSE -->
+  </div>

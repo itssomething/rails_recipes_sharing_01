@@ -1,4 +1,5 @@
 vi:
+  invalid_number: "Số người không hợp lệ."
   errors:
     messages:
       extension_whitelist_error: "File tải lên không đúng định dạng"
