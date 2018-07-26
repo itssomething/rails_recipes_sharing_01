@@ -17,44 +17,20 @@
     <p><%= t ".description" %></p>
   </div>
   <!-- END JUMBOTRON -->
-
   <!-- START CATEGORIES -->
-  <div class="row text-center">
-    <% @categories.each do |cate| %>
-      <div class="col-md-2">
-        <%= link_to cate.name, category_path(cate.id), class: "btn btn-lg
-          btn-primary category" %>
-      </div>
-    <% end %>
+  <div class="row">
+    <%= render "category" %>
   </div>
-
   <!-- END CATEGORIES -->
   <hr>
-
   <div class="row">
-
     <!-- START RECIPES -->
     <div class="col-md-9">
       <h1><%= t ".trending" %></h1>
       <div class="row">
-        <div class="col-md-4">
-          <div class="recipe">
-            <img src="http://via.placeholder.com/250x150" class="img-responsive img-rounded">
-            <div class="bottom-left">
-              <ul class="list-inline">
-                <li><i class="fa fa-bolt"></i> Khó</li>
-                <li><i class="fa fa-clock-o"></i> 10 <%= t ".hour" %></li>
-                <li><i class="fa fa-eye"></i> 2</li></ul>
-            </div>
-          </div>
-          <a href="#">Dế mèn xào chua ngọt</a>
-          <p><%= t ".recipe_by" %>
-            <a href="#">Như Quỳnh</a>
-          </p>
-        </div>
+        <%= render "recipe" %>
       </div>
     </div>
-
     <!-- END RECIPES -->
     <!-- START TOP MEMBER -->
     <div class="col-md-3">

@@ -1,6 +1,9 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+$white: #ffffff;
+$black: #262626;
+
 .recipe {
   position: relative;
   text-align: center;
@@ -9,8 +12,9 @@
 .bottom-left {
   position: absolute;
   bottom: 2px;
-  left: 8px;
-  top: 125px;
+  left: 18px;
+  top: 225px;
+  color: $white
 }
 
 .category {
@@ -20,11 +24,16 @@
 }
 
 .item-recipe {
-  height: 350px;
+  height: 370px;
   width: 250px;
 }
 
-.avatar-show {
-  width: 175px;
-  height: 175px;
+ul.thumbnails {
+    margin-bottom: 0px;
+}
+
+li { list-style-type:none;}
+
+.showhide {
+  display: none;
 }

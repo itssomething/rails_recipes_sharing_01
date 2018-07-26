@@ -16,14 +16,6 @@
 #   Category.create!(name: name)
 # end
 
-# Recipe.destroy_all
-# 20.times do
-#   Recipe.create(name: Faker::Food.dish,
-#     description: Faker::Food.description,
-#     user_id: Faker::Number.between(1, 5),
-#     cover_photo: Faker::LoremFlickr.image("175x175")
-#     )
-# end
 Recipe.create(name: Faker::Food.dish,
   description: Faker::Food.description,
   user_id: 1,
@@ -36,6 +28,16 @@ Recipe.create(name: Faker::Food.dish,
 
 5.times do
   Step.create!(recipe_id: 1, content: Faker::Food.description)
+# Recipe.all.each(&:delete)
+# 20.times do
+#   Recipe.create(name: Faker::Food.dish,
+#     description: Faker::Food.description,
+#     purpose: "mục đích",
+#     ready_in: Faker::Number.between(10,30),
+#     difficult_level: "khó",
+#     user_id: Faker::Number.between(1, 5),
+#     cover_photo: Faker::LoremFlickr.image("200x200")
+#     )
 end
 
 10.times do
