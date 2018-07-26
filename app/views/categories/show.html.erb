@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <h2><b><%= @category.recipes.count %></b> <%= t(".recipe_for")+
+      " "+@category.name %></h2>
+      <% @recipes.each do |recipe| %>
+        <div class="col-md-3">
+          <div class="well text-center item-recipe">
+            <%= image_tag(recipe.cover_photo,
+              class: "img-responsive img-rounded center-block") %>
+              <%= link_to recipe.name, "#" %>
+              <ul class="list-inline">
+                <li><i class="fa fa-bolt"></i><%= recipe.purpose %></li>
+                <li><i class="fa fa-clock-o"></i><%= recipe.ready_in %></li>
+                <li><i class="fa fa-eye"></i><%= recipe.difficult_level %></li>
+              </ul>
+              <hr>
+              <div class="row">
+                <div class="col-md-7">
+                  <ul class="list-inline ">
+                    <li><%= image_tag(recipe.user.avatar,class: "img-responsive
+                      img-circle", size: "25x25") %></li>
+                    <li><%= link_to recipe.user.name, user_path(recipe.user.id), class: "small" %></li>
+                  </ul>
+                </div>
+                <div class="col-md-5">
+                  <ul class="list-inline">
+                    <li>
+                      <%= link_to "", "#", class: "glyphicon glyphicon-heart" %> 6
+                    </li>
+                    <li>
+                      <%= link_to "", "#", class: "glyphicon glyphicon-plus-sign" %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+      <%= paginate @recipes, theme: "twitter-bootstrap-3" %>
+</div>
+
+

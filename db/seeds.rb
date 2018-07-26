@@ -1,3 +1,4 @@
+# User.destroy_all
 
 5.times do
   name = Faker::Name.name
@@ -8,15 +9,14 @@
 end
 
 # Category.destroy_all
-# name_category = ["Ăn sáng", "Ăn vặt", "Khai vị", "Món chay", "Món chính", "Lẩu",
-#   "Làm Bánh", "Bún - Mì - Phở", "Thức uống", "Salad", "Snacks", "Nước chấm"]
+# name_category = ["Ăn sáng", "Ăn vặt", "Khai vị", "Món chay", "Món chính", "Lẩu", "Làm Bánh", "Bún - Mì - Phở", "Thức uống", "Salad", "Snacks", "Nước chấm"]
 
 # name_category.each do |cate|
 #   name = cate
 #   Category.create!(name: name)
 # end
 
-# Recipe.destroy_all
+Recipe.destroy_all
 20.times do
   Recipe.create(name: Faker::Food.dish,
     description: Faker::Food.description,
@@ -24,6 +24,3 @@ end
     cover_photo: Faker::LoremFlickr.image("175x175")
     )
 end
-
-
-
