@@ -1,0 +1,5 @@
+en:
+  shared:
+    error_messages:
+      error: "error"
+      error_notification: "Your form has "
