@@ -11,9 +11,11 @@
       <p><i class="fa fa-envelope"></i>
         <b><%= t ".email" %>:</b> <%= @user.email %>
       </p>
-      <p><i class="fa fa-address-card"></i>
-        <b><%= t ".address" %>: </b> <%= @user.address %>
-      </p>
+      <% if @user.address.present? %>
+        <p><i class="fa fa-address-card"></i>
+          <b><%= t ".address" %>: </b> <%= @user.address %>
+        </p>
+      <% end %>
       <p><i class="fa fa-calendar-check-o"></i>
         <%= t ".joined_at" %> <%= @user.created_at.strftime("%d/%m/%Y") %>
       </p>

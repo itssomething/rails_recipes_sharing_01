@@ -1,1 +1,3 @@
 vi:
+  errors:
+    format: "%{message}"

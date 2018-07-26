@@ -17,6 +17,12 @@ en:
       avatar: "Avatar"
       submit: "Submit"
       back: "Back"
+      cant_find: "Can not find this user"
     update:
       save_success: "Update success."
       save_failed: "Update failed."
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password confirmation"

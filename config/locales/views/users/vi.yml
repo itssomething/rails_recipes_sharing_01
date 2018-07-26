@@ -17,6 +17,12 @@ vi:
       avatar: "Ảnh đại diện"
       submit: "Cập nhật"
       back: "Quay lại"
+      cant_find: "Không thể tìm thấy người dùng này"
     update:
       save_success: "Cập nhật thành công"
       save_failed: "Cập nhật thất bại"
+    form:
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
