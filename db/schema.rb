@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 2018_07_25_041739) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "recipe_id"
+    t.index ["recipe_id"], name: "index_steps_on_recipe_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -108,4 +110,5 @@ ActiveRecord::Schema.define(version: 2018_07_25_041739) do
   add_foreign_key "favors", "users"
   add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "recipes", "users"
+  add_foreign_key "steps", "recipes"
 end

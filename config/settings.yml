@@ -4,3 +4,5 @@ email_max_length: 255
 password_min_length: 6
 recipe_per_show: 8
 truncate_description: 70
+img_size_fill: 175
+max_file: 5
