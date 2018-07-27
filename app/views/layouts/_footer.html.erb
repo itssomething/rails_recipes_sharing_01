@@ -5,10 +5,10 @@
         <b><%= t ".statistics" %></b>
         <div class="row">
           <div class="col-md-6">
-            <p><b>1000</b> <%= t ".recipe" %></p>
+            <p><b><%= Recipe.count %></b> <%= t ".recipe" %></p>
           </div>
           <div class="col-md-6">
-            <p><b>12</b> <%= t ".members" %></p>
+            <p><b><%= User.count %></b> <%= t ".members" %></p>
           </div>
         </div>
         <div class="row">
