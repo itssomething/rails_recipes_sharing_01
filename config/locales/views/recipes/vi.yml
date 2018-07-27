@@ -1,0 +1,21 @@
+vi:
+  recipes:
+    show:
+      cant_find: "Không thể tìm thấy công thức này"
+      recipe: "công thức"
+      making: "Cách làm "
+      follower: "người theo dõi"
+      follow: "Quan tâm "
+      ingredient: "Nguyên liệu"
+      serving: "Phục vụ"
+      people: " người"
+      ready_in: "Thời gian"
+      hour: " giờ"
+      level: "Độ khó"
+      ingredient_to_make: "Nguyên liệu để làm "
+      for: " cho "
+      meal: "Phần ăn"
+      steps: "Các bước thực hiện"
+      step: "Bước"
+      same_purpose: "Cùng thực đơn"
+

@@ -35,8 +35,7 @@ class User < ApplicationRecord
   end
 
   def avatar_size
-    if avatar.size > Settings.max_file.megabytes
-      errors.add :avatar, t(".over_limit_file_size")
-    end
+    return unless avatar.size > Settings.max_file.megabytes
+    errors.add :avatar, I18n.t(".over_limit_file_size")
   end
 end

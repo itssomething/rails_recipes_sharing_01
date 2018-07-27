@@ -1,0 +1,20 @@
+en:
+recipes:
+    show:
+      cant_find: "Can not find this recipe."
+      recipe: "recipes"
+      making: "Making"
+      follower: "follower"
+      follow: "follow "
+      ingredient: "Ingredient "
+      serving: "Serving"
+      people: " people"
+      ready_in: "Ready in"
+      hour: " hour"
+      level: "Level"
+      ingredient_to_make: "Ingredient to make "
+      for: " for "
+      meal: "Serving "
+      steps: "Steps"
+      step: "step"
+      same_purpose: "Same menu"
