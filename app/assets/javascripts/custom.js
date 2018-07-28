@@ -28,4 +28,9 @@ $(document).ready(function () {
       $(".ingredient-amount-" + i).text(new_amounts[i]);
     }
   });
+
+  $(".btnsh").click(function() {
+    $(".showhide").toggle();
+  });
+
 });

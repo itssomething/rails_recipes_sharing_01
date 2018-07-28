@@ -7,4 +7,5 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :steps
   scope :desc, ->{order created_at: :desc}
+  scope :hot_recipe, ->{where "created_at >= ?", Settings.hot_recipe.day.ago}
 end

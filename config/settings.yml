@@ -6,3 +6,6 @@ recipe_per_show: 8
 truncate_description: 70
 img_size_fill: 175
 max_file: 5
+limit_recipe: 6
+hot_recipe: 3
+num_category: 5
