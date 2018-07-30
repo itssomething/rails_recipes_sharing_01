@@ -4,7 +4,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav nav-pills">
         <a href="#" class="navbar-left">
-          <img src="https://www.cooky.vn/Content/img/Cooky-Slogan-Official-Design.80.png" class = "img-responsive">
+          <img src="https://bit.ly/2mRfHva" class = "img-responsive">
         </a>
         <li>
           <a href="#" class="active">
@@ -28,8 +28,9 @@
           <i class="fa fa-sign-out"></i> <%= t ".logout" %></a>
         <a href="#" class="btn btn-default navbar-btn">
           <i class="fa fa-sign-in"></i> <%= t ".login" %></a>
-        <a href="#" class="btn btn-default navbar-btn">
-          <i class="fa fa-address-book"></i> <%= t ".signup" %></a>
+        <%= link_to signup_path, class: "btn btn-default navbar-btn" do %>
+          <i class="fa fa-address-book"></i> <%= t ".signup" %>
+        <% end %>
         <!-- END NAVBAR RIGHT -->
       </ul>
     </div>
