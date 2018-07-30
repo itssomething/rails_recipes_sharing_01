@@ -11,13 +11,8 @@ vi:
       cant_find: "Không thể tìm thấy người dùng này"
     edit:
       title: "Cập nhật thông tin tài khoản"
-      address: "Địa chỉ"
-      name: "Tên"
-      email: "Email"
-      avatar: "Ảnh đại diện"
-      submit: "Cập nhật"
-      back: "Quay lại"
       cant_find: "Không thể tìm thấy người dùng này"
+      edit_btn: "Cập nhật"
     update:
       save_success: "Cập nhật thành công"
       save_failed: "Cập nhật thất bại"
@@ -25,4 +20,14 @@ vi:
       name: "Tên"
       email: "Email"
       password: "Mật khẩu"
+      address: "Địa chỉ"
+      avatar: "Ảnh đại diện"
       password_confirmation: "Xác nhận mật khẩu"
+      create_btn: "Tạo tài khoản"
+      back: "Quay lại"
+    new:
+      signup: "Đăng kí"
+      create_btn: "Tạo tài khoản"
+    create:
+      welcome: "Bạn đã là thành viên của Chefy.vn! Hãy cùng nhau xây dựng một
+        cộng đồng chia sẻ công thức nấu ăn số 1 Vietnam bạn nhé!"

@@ -10,4 +10,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
+
+  def default_url(*args)
+    "" + [version_name, "default_avatar.png"].compact.join('_')
+  end
 end
