@@ -1,4 +1,4 @@
-  <div class="row">
+ <div class="row">
     <!-- START USER -->
     <div class="col-md-2">
       <div class="sidebar-nav-fixed affix user-info">
@@ -11,18 +11,15 @@
             <button class="btn btn-sm"><%= t ".follow" %></button>
         </div>
       </div>
-
-    </div>
+     </div>
     <!-- END USER -->
-
-    <!-- START RECIPE -->
+     <!-- START RECIPE -->
     <div class="col-md-7">
       <div class="well main-recipe">
         <img src="https://bit.ly/2mK5wZg" class="img-responsive">
         <h1><%= t ".making" %><%= @recipe.name %></h1>
         <p><%= @recipe.description %></p>
-
-        <div class="row text-center">
+         <div class="row text-center">
           <div class="col-md-2"></div>
           <div class="col-md-2">
             <h4> <%= t ".ingredient" %></h4>
@@ -70,8 +67,7 @@
               </button>
             </div>
           </div>
-
-        <hr>
+         <hr>
         <div class="row">
           <% @recipe.recipe_ingredients.each_with_index do
           |ingredient, index| %>
@@ -87,11 +83,9 @@
             </div>
           <% end %>
         </div>
-
-      </div>
+       </div>
       <!-- END INGREDIENT -->
-
-      <div class="well main-recipe">
+       <div class="well main-recipe">
         <div class="row">
           <div class="col-md-10">
             <h1><%= t ".making" %> <%= @recipe.name %></h1>
@@ -102,9 +96,7 @@
           </div>
         </div>
         <hr>
-
-
-          <h2><%= t ".steps" %></h2>
+           <h2><%= t ".steps" %></h2>
           <% step_no = 1 %>
           <% @recipe.steps.each_with_index do |step, index| %>
           <!-- LOOP HERE -->
@@ -132,12 +124,10 @@
           </div>
           <hr><br><br>
           <% end %>
-
-      </div>
+       </div>
     </div>
     <!-- END RECIPE -->
-
-    <!-- START SAME PURPOSE -->
+     <!-- START SAME PURPOSE -->
     <div class="col-md-3">
       <div class="sidebar-nav-fixed pull-right affix">
         <div class="well same-purpose">

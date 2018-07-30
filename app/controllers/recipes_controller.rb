@@ -1,17 +1,33 @@
 class RecipesController < ApplicationController
-  before_action :find_recipe
+  def index
+    @recipes = Recipe.all
+  end
+
+  def new
+    @recipe = Recipe.new
+    3.times{@recipe.steps.build}
+    3.times{@recipe.recipe_ingredients.build}
+  end
+
+  def create
+    @recipe = Recipe.new recipe_params
+    if @recipe.save
+      redirect_to @recipe
+    else
+      render :new
+    end
+  end
 
   def show
-    @user = @recipe.user
+    @recipe = Recipe.find_by id: params[:id]
   end
 
   private
 
-  def find_recipe
-    @recipe = Recipe.find_by id: params[:id]
-
-    return if @recipe
-    flash[:danger] = t ".cant_find"
-    redirect_to root_path
+  def recipe_params
+    params.require(:recipe).permit :name,
+      :description, :purpose, :ready_in, :difficult_level,
+      :people_num, steps_attributes: [:content],
+      recipe_ingredients_attributes: [:temp]
   end
 end

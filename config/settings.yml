@@ -9,3 +9,4 @@ max_file: 5
 limit_recipe: 6
 hot_recipe: 3
 num_category: 5
+ingredient_split: 3

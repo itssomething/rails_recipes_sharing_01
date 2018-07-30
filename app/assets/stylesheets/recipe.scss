@@ -1,3 +1,42 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+$body-bg: #f0f0f0;
+$field-label: #d43f3a;
+body {
+  background-color: $body-bg;
+  margin-top: 120px;
+}
+.new_recipe {
+  padding: 20px 20px 100px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 0 100px;
+}
+
+.field-label {
+  border-left: 3px solid $field-label;
+  padding: 3px 8px;
+  margin: 0 0 10px 20px
+}
+
+.field-input {
+  margin: 0 0 30px;
+}
+
+.submit-button{
+  float: right;
+  padding: 8px 20px 6px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  min-height: 100px;
+}
 .step-order {
   color: red ;
 }
@@ -35,4 +74,3 @@ input[type=number]::-webkit-inner-spin-button {
 .user-info {
   width: 200px
 }
-
