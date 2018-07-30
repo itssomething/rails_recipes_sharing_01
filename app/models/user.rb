@@ -11,6 +11,7 @@ class User < ApplicationRecord
     dependent: :destroy
   has_many :followings, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :comments, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
@@ -27,6 +28,10 @@ class User < ApplicationRecord
             length: {minimum: Settings.password_min_length}, allow_nil: true
   validate :avatar_size
   has_secure_password
+
+  def current_user? user
+    self == user
+  end
 
   private
 

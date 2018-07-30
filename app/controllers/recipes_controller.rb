@@ -21,14 +21,16 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find_by id: params[:id]
     @user = @recipe.user
+    @comments = @recipe.comments.all
+    @comment = @recipe.comments.build
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit :name,
+    params.require(:recipe).permit(:name,
       :description, :purpose, :ready_in, :difficult_level,
       :people_num, steps_attributes: [:content],
-      recipe_ingredients_attributes: [:temp]
+      recipe_ingredients_attributes: [:temp]).merge user_id: current_user.id
   end
 end

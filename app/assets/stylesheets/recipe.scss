@@ -68,9 +68,13 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .main-recipe {
-  width: 734px;
+  width: 100%;
 }
 
 .user-info {
-  width: 200px
+  width: 250px
+}
+
+.comment {
+  margin: 0 20px;
 }
