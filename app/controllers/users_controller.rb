@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, except: [:new, :create]
+  before_action :logged_in, only: [:new]
+  before_action :correct_user, except: [:show]
 
   def show
     @recipes = @user.recipes.desc.page(params[:page])
@@ -39,6 +41,14 @@ class UsersController < ApplicationController
     return if @user
     flash[:danger] = t ".cant_find"
     redirect_to root_path
+  end
+
+  def logged_in
+    redirect_to root_path if logged_in?
+  end
+
+  def correct_user
+    redirect_to root_path unless current_user? @user
   end
 
   def user_params

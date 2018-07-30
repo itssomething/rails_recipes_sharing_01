@@ -20,6 +20,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find_by id: params[:id]
+    @user = @recipe.user
   end
 
   private

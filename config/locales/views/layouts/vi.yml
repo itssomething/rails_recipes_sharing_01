@@ -8,6 +8,7 @@ vi:
       logout: "Đăng xuất"
       login: "Đăng nhập"
       signup: "Đăng kí"
+      info: "Thông tin tài khoản"
     footer:
       recipe: "Công thức"
       members: "thành viên"

@@ -25,10 +25,16 @@
       <p><i class="fa fa-calendar-check-o"></i>
         <%= t ".joined_at" %> <%= @user.created_at.strftime("%d/%m/%Y") %>
       </p>
-      <%= link_to edit_user_path, class: "btn btn-primary center-block" do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        <%= t ".manage_account" %>
+
+
+      <% if current_user? @user %>
+        <%= link_to edit_user_path, class: "btn btn-primary center-block" do %>
+          <i class="fa fa-pencil-square-o"></i> <%= t ".manage_account" %>
+        <% end %>
+      <% else %>
+        <a href="#" class="btn btn-warning center-block"><%= t ".follow" %></a>
       <% end %>
+
     </div>
     <div class="col-md-9">
       <div class="row">
