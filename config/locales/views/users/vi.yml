@@ -9,6 +9,7 @@ vi:
       manage_account: "Quản lí tài khoản"
       recipe: "công thức"
       cant_find: "Không thể tìm thấy người dùng này"
+      follow: "Quan tâm"
     edit:
       title: "Cập nhật thông tin tài khoản"
       cant_find: "Không thể tìm thấy người dùng này"

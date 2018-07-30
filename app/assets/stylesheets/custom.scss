@@ -53,8 +53,11 @@ li { list-style-type:none;}
   }
 }
 
-.navbar-left.img-responsive{
-  img{
-    max-width: 150px;
-  }
+.logo {
+  height: 50px;
+  width: 150px;
+}
+
+.avatar-show {
+  width: 175px;
 }
