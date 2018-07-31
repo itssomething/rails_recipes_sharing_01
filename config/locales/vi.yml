@@ -7,3 +7,4 @@ vi:
       mini_magick_processing_error: "Có lỗi xảy ra trong quá trình upload.
         Vui lòng thử lại."
     format: "%{message}"
+  empty_comment_alert: "Comment không được để trống"
