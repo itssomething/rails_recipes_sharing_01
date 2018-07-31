@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_062443) do
+ActiveRecord::Schema.define(version: 2018_07_30_062852) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2018_07_27_062443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "recipe_id"
+    t.index ["recipe_id"], name: "index_comments_on_recipe_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -50,7 +52,6 @@ ActiveRecord::Schema.define(version: 2018_07_27_062443) do
   end
 
   create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.string "amount"
     t.string "measurement"
     t.datetime "created_at", null: false
@@ -108,6 +109,7 @@ ActiveRecord::Schema.define(version: 2018_07_27_062443) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
   add_foreign_key "favorite_recipes", "users"
   add_foreign_key "favors", "users"

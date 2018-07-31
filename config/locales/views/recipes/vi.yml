@@ -30,4 +30,5 @@ vi:
       steps: "Các bước thực hiện"
       step: "Bước"
       same_purpose: "Cùng thực đơn"
-
+      delete: "Xóa"
+      confirm: "Bạn có muốn xóa comment?"
