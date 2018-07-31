@@ -11,5 +11,11 @@ Rails.application.routes.draw do
     resources :recipes do
       resources :comments, only: [:create, :destroy]
     end
+    resources :users do
+      member do
+        get :following, :followers
+      end
+    end
+    resources :relationships, only: [:create, :destroy]
   end
 end

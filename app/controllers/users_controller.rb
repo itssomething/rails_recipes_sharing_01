@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, except: [:new, :create]
-  before_action :logged_in, only: [:new]
+  before_action :logged_in_user, only: [:new]
   before_action :correct_user, except: [:show]
 
   def show
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t ".welcome"
+      log_in @user
       redirect_to @user
     else
       render :new
@@ -43,8 +44,10 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def logged_in
-    redirect_to root_path if logged_in?
+  def logged_in_user
+    return if logged_in?
+    flash[:danger] = t "please_login"
+    redirect_to login_url
   end
 
   def correct_user

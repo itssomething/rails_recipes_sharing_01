@@ -7,7 +7,7 @@
               class: "img-responsive img-rounded" %>
             <p><b><%= @user.name %></b></p>
             <p><%= @user.recipes.count %> <%= t ".recipe" %></p>
-            <p>? <%= t ".follower" %></p>
+            <p><%= @user.followers.count %> <%= t ".follower" %></p>
             <button class="btn btn-sm"><%= t ".follow" %></button>
         </div>
       </div>

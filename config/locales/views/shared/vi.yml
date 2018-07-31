@@ -2,4 +2,4 @@ vi:
   shared:
     error_messages:
       error: "lỗi"
-      error_notification: "Form của bạn đang có"
+      error_notification: "Form của bạn đang có "

@@ -32,3 +32,7 @@ vi:
     create:
       welcome: "Bạn đã là thành viên của Chefy.vn! Hãy cùng nhau xây dựng một
         cộng đồng chia sẻ công thức nấu ăn số 1 Vietnam bạn nhé!"
+    unfollow:
+      unfollow: "Bỏ theo dõi"
+    follow:
+      follow: "Theo dõi"
