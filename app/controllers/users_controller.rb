@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, except: [:new, :create, :feed]
-  before_action :correct_user, except: [:show]
+  before_action :find_user, except: [:new, :create, :index]
+  before_action :correct_user, except: [:show, :index]
 
   def show
     @recipes = @user.recipes.desc.page(params[:page])
@@ -33,6 +33,10 @@ class UsersController < ApplicationController
       flash[:danger] = t ".save_failed"
       render :edit
     end
+  end
+
+  def index
+    @users = User.top_user
   end
 
   private

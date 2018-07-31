@@ -2,6 +2,8 @@ vi:
   users:
     show:
       follower: "người theo dõi"
+      follow: "Quan tâm"
+      unfollow: "Bỏ quan tâm"
       like: "lượt thích"
       email: "Email"
       address: "Địa chỉ"
@@ -9,7 +11,6 @@ vi:
       manage_account: "Quản lí tài khoản"
       recipe: "công thức"
       cant_find: "Không thể tìm thấy người dùng này"
-      follow: "Quan tâm"
     edit:
       title: "Cập nhật thông tin tài khoản"
       cant_find: "Không thể tìm thấy người dùng này"
@@ -36,3 +37,6 @@ vi:
       unfollow: "Bỏ theo dõi"
     follow:
       follow: "Theo dõi"
+    index:
+      top20: "Top 20 thành viên"
+      follower: " theo dõi"

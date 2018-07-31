@@ -2,6 +2,8 @@ en:
   users:
     show:
       follower: "follower"
+      follow: "follow"
+      unfollow: "unfollow"
       like: "like"
       email: "Email"
       address: "Address"
@@ -26,3 +28,6 @@ en:
       email: "Email"
       password: "Password"
       password_confirmation: "Password confirmation"
+    index:
+      top20: "Top 20 Member"
+      follower: " follower"
