@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by id: params[:id]
+
     return if @user
     flash[:danger] = t ".cant_find"
     redirect_to root_path

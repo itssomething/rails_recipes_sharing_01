@@ -1,0 +1,13 @@
+<%= form_for @comment, url: recipe_comments_path(@recipe), class: "add-comment-btn", remote: :true do |form| %>
+  <%= render "shared/error_messages", object: form.object %>
+
+  <div class="field">
+    <%= form.label :content, t(".add_comment") %>
+    <%= form.text_area :content, class: "form-control field-input comment-input" %>
+    <%= form.hidden_field :recipe_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t(".submit"), class: "btn btn-danger" %>
+  </div>
+<% end %>

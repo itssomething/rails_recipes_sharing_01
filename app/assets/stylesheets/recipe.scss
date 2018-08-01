@@ -75,6 +75,10 @@ input[type=number]::-webkit-inner-spin-button {
   width: 250px
 }
 
-.comment {
-  margin: 0 20px;
+.cmt {
+  padding: 10px 0;
+}
+
+.comment :hover {
+  background: white;
 }
