@@ -22,8 +22,15 @@
           <span><%= t ".top_member" %></span>
         <% end %>
         </li>
-      </ul>
 
+        <% if logged_in? %>
+          <li><%= link_to feed_path do %>
+            <i class="fa fa-rss"></i>
+            <span><%= t "feeds.index.feed" %></span>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
       <!-- NAVBAR RIGHT -->
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>

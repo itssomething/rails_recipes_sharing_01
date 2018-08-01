@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <div class="well">
+      <h1><%= t ".feed" %></h1>
+      <% @recipes.each do |recipe| %>
+        <div class="panel">
+          <p>
+            <%= image_tag recipe.user.avatar.url.to_s,
+              size: Settings.img_icon_size,
+              class: "img-circle" %>
+            <%= link_to recipe.user.name, user_path(recipe.user) %>
+            <%= t ".posted" %>
+          </p>
+          <p>
+            <i class="fa fa-clock-o"></i>
+            <%= time_ago_in_words(recipe.created_at) <<" "<< t(".ago") %>
+          </p>
+          <%= image_tag recipe.cover_photo, class: "img-responsive" %>
+          <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+          <p><%= truncate recipe.description,
+            length: Settings.truncate_description %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

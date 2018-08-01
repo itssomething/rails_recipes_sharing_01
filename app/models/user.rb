@@ -45,6 +45,10 @@ class User < ApplicationRecord
     following.include? other_user
   end
 
+  def feed
+    @recipes = Recipe.feed(following_ids, id).desc
+  end
+
   private
 
   def email_downcase
