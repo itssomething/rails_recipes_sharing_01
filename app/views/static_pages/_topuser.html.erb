@@ -1,0 +1,21 @@
+<% @topusers.each do |user| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to image_tag(user.avatar.to_s,class: "img-responsive img-circle",
+      size: "50x50"), user_path(user.id) %>
+    </div>
+    <div class="col-md-9">
+      <p>
+        <b><%= link_to user.name, user_path(user.id) %></b>
+      </p>
+      <p><%= user.recipes.count %><%= t ".recipe" %> | <span><%= user.followers.count %><%= t "static_pages.home.followers" %>
+      </span></p>
+    </div>
+  </div>
+<% end %>
+<div class="row">
+  <div class="pull-right">
+    <b><%= link_to t("static_pages.home.link_topuser"), topuser_path %></b>
+  </div>
+</div>
+
