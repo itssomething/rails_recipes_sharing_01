@@ -9,6 +9,7 @@
             <p><%= @user.recipes.count %> <%= t ".recipe" %></p>
             <p><%= @user.followers.count %> <%= t ".follower" %></p>
             <button class="btn btn-sm"><%= t ".follow" %></button>
+            <%= render "favors/like_form", recipe: @recipe, favor: @favor%>
         </div>
       </div>
      </div>

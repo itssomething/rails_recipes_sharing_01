@@ -1,5 +1,5 @@
 en:
-recipes:
+  recipes:
     show:
       cant_find: "Can not find this recipe."
       recipe: "recipes"

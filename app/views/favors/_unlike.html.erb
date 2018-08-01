@@ -1,0 +1,6 @@
+<%= link_to user_recipe_favor_path(current_user, recipe, favor.ids), method: :delete, remote: true do %>
+  <button class="btn btn-primary">
+    <i class="fa fa-thumbs-up like-text"></i>
+    <span class="like-text"><%= t ".unlike_recipe" %></span>
+  </button>
+<% end %>

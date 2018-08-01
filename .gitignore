@@ -36,3 +36,4 @@ config/settings/test.yml
 public/uploads/*
 public/javascripts/i18n.js
 public/javascripts/translations.js
+/.idea/*
