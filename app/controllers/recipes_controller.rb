@@ -5,8 +5,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    3.times{@recipe.steps.build}
-    3.times{@recipe.recipe_ingredients.build}
+    @recipe.steps.build
+    @recipe.recipe_ingredients.build
   end
 
   def create
@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:name,
       :description, :purpose, :ready_in, :difficult_level,
-      :people_num, steps_attributes: [:content],
+      :people_num, steps_attributes: [:content, :_destroy, {photos: []}],
       recipe_ingredients_attributes: [:temp]).merge user_id: current_user.id
   end
 end

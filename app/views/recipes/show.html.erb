@@ -97,7 +97,6 @@
         </div>
         <hr>
            <h2><%= t ".steps" %></h2>
-          <% step_no = 1 %>
           <% @recipe.steps.each_with_index do |step, index| %>
           <!-- LOOP HERE -->
           <div class="row">
@@ -110,15 +109,13 @@
             <div class="col-md-10">
               <p><%= step.content %></p>
               <div class="row">
-                <div class="col-md-6">
-                  <%= image_tag "http://via.placeholder.com/270x270",
-                    class: "img-responsive" %>
-                </div>
-                <div class="col-md-6">
-                  <%= image_tag "http://via.placeholder.com/270x270",
-                    class: "img-responsive" %>
-                </div>
+                <% step.photos.each do |photo| %>
+                    <div class="col-md-6">
+                      <%= image_tag photo.url.to_s, class: "img-responsive" %>
+                    </div>
+                <% end %>
               </div>
+
             </div>
           <!-- END LOOP HERE -->
           </div>
