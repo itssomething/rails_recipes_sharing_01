@@ -72,14 +72,14 @@
           <% @recipe.recipe_ingredients.each_with_index do
           |ingredient, index| %>
             <div class="col-md-6">
-                <p><i class="fa fa-check-circle-o fa-2x ingredient-item"></i>
-                  <b><%= ingredient.ingredient_name %></b>
-                  <span class="ingredient-amount-<%= index + 1 %>">
-                    <%= ingredient.amount %>
-                  </span>
-                  <%= ingredient.measurement %>
-                  </span>
-                </p>
+              <p><i class="fa fa-check-circle-o fa-2x ingredient-item"></i>
+                <b><%= ingredient.name %></b>
+                <span class="ingredient-amount-<%= index + 1 %>">
+                  <%= ingredient.amount %>
+                </span>
+                <%= ingredient.measurement %>
+                </span>
+              </p>
             </div>
           <% end %>
         </div>
