@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, except: [:new, :create]
-  before_action :logged_in_user, only: [:new]
+  before_action :find_user, except: [:new, :create, :feed]
   before_action :correct_user, except: [:show]
 
   def show
@@ -9,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    redirect_to root_path if logged_in?
     @user = User.new
   end
 
