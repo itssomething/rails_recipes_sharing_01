@@ -3,7 +3,7 @@
     <div class="col-md-2">
       <div class="sidebar-nav-fixed affix user-info">
         <div class="well center-block text-center">
-            <%= image_tag @user.avatar.url,
+            <%= image_tag @user.avatar.url.to_s,
               class: "img-responsive img-rounded" %>
             <p><b><%= @user.name %></b></p>
             <p><%= @user.recipes.count %> <%= t ".recipe" %></p>
@@ -16,7 +16,7 @@
      <!-- START RECIPE -->
     <div class="col-md-7">
       <div class="well main-recipe">
-        <img src="https://bit.ly/2mK5wZg" class="img-responsive">
+        <%= image_tag @recipe.cover_photo.url.to_s, class: "img-responsive" %>
         <h1><%= t ".making" %><%= @recipe.name %></h1>
         <p><%= @recipe.description %></p>
          <div class="row text-center">
