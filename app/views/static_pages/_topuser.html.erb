@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-md-3">
       <%= link_to image_tag(user.avatar.to_s,class: "img-responsive img-circle",
-      size: "50x50"), user_path(user.id) %>
+      size: "50x50"), user_path(user) %>
     </div>
     <div class="col-md-9">
       <p>
-        <b><%= link_to user.name, user_path(user.id) %></b>
+        <b><%= link_to user.name, user_path(user) %></b>
       </p>
-      <p><%= user.recipes.count %><%= t ".recipe" %> | <span><%= user.followers.count %><%= t "static_pages.home.followers" %>
+      <p><%= user.recipes.count %><%= t "static_pages.home.recipe" %> | <span><%= user.followers.count %><%= t "static_pages.home.followers" %>
       </span></p>
     </div>
   </div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/feed", to: "feeds#index"
     get "/search", to: "search#index"
+    get "/topuser", to: "users#index"
 
     resources :categories
     resources :users

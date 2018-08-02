@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :comments, dependent: :destroy
 
+  scope :top_user, ->{joins(:recipes).group(:id).order("count(recipes.id)
+   DESC").limit(Settings.num_top_user)}
+
   mount_uploader :avatar, AvatarUploader
 
   before_save :email_downcase

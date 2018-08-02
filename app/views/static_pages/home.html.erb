@@ -29,17 +29,7 @@
     <!-- START TOP MEMBER -->
     <div class="col-md-3">
       <h1><%= t ".top_member" %></h1>
-      <div class="row">
-        <div class="col-md-3">
-          <img src="http://via.placeholder.com/50x50" class="img-responsive img-circle">
-        </div>
-        <div class="col-md-9">
-          <p>
-            <b>Chị Nguyệt</b>
-          </p>
-          <p>12 <%= t ".recipe" %> <span>|</span> 30 <%= t ".followers" %></p>
-        </div>
-      </div>
+      <%= render "topuser" %>
     </div>
     <!-- END TOP MEMBER -->
   </div>

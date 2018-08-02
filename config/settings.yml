@@ -12,3 +12,5 @@ num_category: 5
 ingredient_split: 3
 img_icon_size: 50
 recipe_new: 8
+limit_top_user_home: 6
+num_top_user: 20
