@@ -17,6 +17,10 @@
       <%= f.label :purpose, t(".purpose"), class: "field-label" %>
       <%= f.text_area :purpose, class: "form-control field-input" %>
 
+      <%= f.label :category_recipe, class: "field-label" %>
+      <%= render "category" %>
+      <br>
+
       <%= f.label :ready_in, t(".ready_in"), class: "field-label" %>
       <%= f.text_field :ready_in, class: "form-control field-input", type: "number" %>
 
