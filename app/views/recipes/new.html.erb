@@ -6,6 +6,11 @@
       <%= f.label :name, t(".name"), class: "field-label" %>
       <%= f.text_field :name, class: "form-control field-input" %>
 
+      <%= f.label :cover_photo %>
+      <%= f.file_field :cover_photo,
+        accept: "image/jpeg,image/gif,image/png,image/jpg" %>
+      <br>
+
       <%= f.label :description, t(".description"), class: "field-label" %>
       <%= f.text_area :description, class: "form-control field-input" %>
 
@@ -16,7 +21,10 @@
       <%= f.text_field :ready_in, class: "form-control field-input", type: "number" %>
 
       <%= f.label :difficult_level, t(".difficult_level"), class: "field-label" %>
-      <%= f.text_field :difficult_level, class: "form-control field-input" %>
+      <%= f.select(:difficult_level,
+        options_for_select([["Dễ", "Dễ"], ["Trung bình", "Trung bình"],
+        ["Khó", "Khó"]]),{}, class: "form-control") %>
+      <br>
 
       <%= f.label :people_num, t(".people_num"), class: "field-label" %>
       <%= f.text_field :people_num, class: "form-control field-input", type: "number" %>

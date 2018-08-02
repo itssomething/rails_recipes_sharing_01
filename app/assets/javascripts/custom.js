@@ -25,7 +25,7 @@ $(document).ready(function () {
     }
 
     for (i = 1; i <= no_ingredients; i++) {
-      $(".ingredient-amount-" + i).text(new_amounts[i]);
+      $(".ingredient-amount-" + i).text(new_amounts[i].toFixed(2));
     }
   });
 

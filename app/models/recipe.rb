@@ -6,6 +6,8 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user
 
+  mount_uploader :cover_photo, CoverPhotoUploader
+
   scope :desc, ->{order created_at: :desc}
   scope :hot_recipe, ->{where "created_at >= ?", Settings.hot_recipe.day.ago}
   scope :feed, ->(f_ids, id){where("user_id IN (?) OR user_id = ?", f_ids, id)}
