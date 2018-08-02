@@ -22,18 +22,22 @@
       <%= f.text_field :people_num, class: "form-control field-input", type: "number" %>
 
       <h3><%= t ".ingredients" %></h3>
-      <button type="button" class="btn btn-danger add-ingredient">
-        <%= t ".add_ingredient" %>
-      </button>
+      <div class = "ingredient_fields">
+        <%= f.fields_for :recipe_ingredients, html: {multipart: true} do |builder| %>
+          <%= render "recipe_ingredient", f: builder %>
+        <% end %>
+      </div>
+      <%= link_to_add_ingredient(t(".add_ingredient"), f, :recipe_ingredients,
+        class: "btn btn-default")%>
 
       <h3><%= t ".steps" %></h3>
-      <div class = "fields">
+      <div class = "step_fields">
         <%= f.fields_for :steps, html: {multipart: true} do |builder| %>
           <%= render "step", f: builder %>
         <% end %>
-      </div>
 
-      <%= link_to_add_row(t(".add_step"), f, :steps, class: "btn btn-default")%>
+      </div>
+      <%= link_to_add_step(t(".add_step"), f, :steps, class: "btn btn-default")%>
       <%= f.submit t(".submit"), class: "btn btn-primary submit-button" %>
     <% end %>
   </div>
