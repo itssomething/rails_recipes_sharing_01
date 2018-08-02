@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find_by id: params[:id]
     @user = @recipe.user
+    @favor = Favor.rela current_user.id, @recipe
     @comments = @recipe.comments.all
     @comment = @recipe.comments.build
   end

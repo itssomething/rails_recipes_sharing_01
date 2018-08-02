@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :correct_user, only: :destroy
-  before_action :find_user, only: %i(create destroy)
+  before_action :find_recipe, only: %i(create destroy)
 
   def new; end
 

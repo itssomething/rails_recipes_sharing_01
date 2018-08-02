@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     resources :recipes do
       resources :comments, only: [:create, :destroy]
     end
+
     resources :users do
+      resources :recipes do
+        resources :favors, only: [:create, :destroy]
+      end
       member do
         get :following, :followers
       end

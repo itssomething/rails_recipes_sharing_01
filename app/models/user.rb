@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :favor, dependent: :destroy
+  has_many :favors, as: :targetable, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :recipes, dependent: :destroy
   has_many :favorite_recipes, dependent: :destroy
@@ -50,6 +50,11 @@ class User < ApplicationRecord
 
   def feed
     @recipes = Recipe.feed(following_ids, id).desc
+  end
+
+  def liked? recipe
+    @rela = Favor.rela self, recipe
+    @rela.present?
   end
 
   private

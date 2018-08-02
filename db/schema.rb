@@ -42,12 +42,15 @@ ActiveRecord::Schema.define(version: 2018_08_01_134519) do
   end
 
   create_table "favors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "targetable_id"
+    t.bigint "targetable_id"
     t.string "targetable_type"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.index ["targetable_id"], name: "index_favors_on_targetable_id"
+    t.index ["targetable_type", "targetable_id"], name: "index_favors_on_targetable_type_and_targetable_id"
+    t.index ["targetable_type"], name: "index_favors_on_targetable_type"
     t.index ["user_id"], name: "index_favors_on_user_id"
   end
 
