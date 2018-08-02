@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "/feed", to: "feeds#index"
+    get "/search", to: "search#index"
 
     resources :categories
     resources :users
