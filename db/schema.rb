@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_062852) do
+ActiveRecord::Schema.define(version: 2018_08_01_134519) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2018_07_30_062852) do
   create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "step_order"
     t.string "content"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recipe_id"
+    t.json "photos"
     t.index ["recipe_id"], name: "index_steps_on_recipe_id"
   end
 

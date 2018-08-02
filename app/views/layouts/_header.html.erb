@@ -11,7 +11,7 @@
           <% end %>
         </li>
 
-        <li><%= link_to new_recipe_path do %>
+        <li><%= link_to recipes_path do %>
           <i class="fa fa-cutlery"></i>
           <span><%= t ".recipe" %></span>
         <% end %>
@@ -34,9 +34,9 @@
       <!-- NAVBAR RIGHT -->
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-        <a href="#" class="btn btn-default navbar-btn">
-                <i class="fa fa-plus-square"></i> <%= t ".create_recipe" %>
-              </a>
+          <%= link_to new_recipe_path, class: "btn btn-default navbar-btn" do %>
+            <i class="fa fa-plus-square"></i> <%= t ".create_recipe" %>
+          <% end %>
           <button class="btn btn-default dropdown-toggle" type="button"
             data-toggle="dropdown">
           <%= current_user.name %>

@@ -12,7 +12,8 @@ class Recipe < ApplicationRecord
   scope :search, ->(reci){where "name LIKE ?", "%#{reci}%"}
   scope :sort_by_name, ->{order name: :desc}
 
-  accepts_nested_attributes_for :steps, allow_destroy: true
+  accepts_nested_attributes_for :steps, allow_destroy: true,
+    reject_if: proc{|attributes| attributes["content"].blank?}
   accepts_nested_attributes_for :recipe_ingredients, allow_destroy: true
 
   validates :name, :description, :purpose, :ready_in,

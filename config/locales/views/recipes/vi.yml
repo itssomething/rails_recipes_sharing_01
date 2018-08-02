@@ -33,3 +33,5 @@ vi:
       delete: "Xóa"
       confirm: "Bạn có muốn xóa comment?"
       comments: "Comments"
+    step:
+      content: "Hướng dẫn chi tiết"
