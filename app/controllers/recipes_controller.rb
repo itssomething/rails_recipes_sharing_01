@@ -5,12 +5,14 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @categories = Category.all
     @recipe.steps.build
     @recipe.recipe_ingredients.build
   end
 
   def create
     @recipe = Recipe.new recipe_params
+    @recipe.category_ids = params[:recipe][:category_ids]
     if @recipe.save
       redirect_to @recipe
     else
@@ -30,7 +32,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :cover_photo,
-      :description, :purpose, :ready_in, :difficult_level,
+      :description, :purpose, :ready_in, :difficult_level, :category_ids,
       :people_num, steps_attributes: [:content, :_destroy, {photos: []}],
       recipe_ingredients_attributes: [:name, :amount, :measurement])
           .merge user_id: current_user.id
