@@ -57,6 +57,11 @@ class User < ApplicationRecord
     @rela.present?
   end
 
+  def bookmarked? recipe
+    @rela = Favor.rela_bookmark self, recipe
+    @rela.present?
+  end
+
   private
 
   def email_downcase

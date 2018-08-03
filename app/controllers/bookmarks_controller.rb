@@ -1,13 +1,13 @@
-class FavorsController < ApplicationController
+class BookmarksController < ApplicationController
   before_action :find_recipe, only: %i(create destroy)
 
   def create
-    return if current_user.liked? @recipe
-    if params[:status] == "1"
-      @favor = Favor.new status: "like_recipe", user: current_user,
+    return if current_user.bookmarked? @recipe
+    if params[:status] == "2"
+      @favor1 = Favor.new status: "bookmark_recipe", user: current_user,
         targetable: @recipe
-      if @favor.save
-        @favor = Favor.rela current_user.id, @recipe
+      if @favor1.save
+        @favor1 = Favor.rela_bookmark current_user.id, @recipe
         respond_to do |format|
           format.html {redirect_to @recipe}
           format.js
@@ -16,11 +16,11 @@ class FavorsController < ApplicationController
         flash[:warning] = t ".failed"
       end
     end
-  end
+end
 
   def destroy
-    @favor = Favor.find_by id: params[:id]
-    @favor.destroy
+    @favor1 = Favor.find_by id: params[:id]
+    @favor1.destroy
     respond_to do |format|
       format.html {redirect_to @recipe}
       format.js

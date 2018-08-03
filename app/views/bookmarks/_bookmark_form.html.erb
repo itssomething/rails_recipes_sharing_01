@@ -1,0 +1,5 @@
+<% if current_user.bookmarked? recipe %>
+  <div id="ajax-bookmark-unbookmark"><%= render "bookmarks/unbookmark", recipe: recipe, favor1: favor1 %></div>
+<% else %>
+  <div id="ajax-bookmark-unbookmark"><%= render "bookmarks/bookmark", recipe: recipe %></div>
+<% end %>

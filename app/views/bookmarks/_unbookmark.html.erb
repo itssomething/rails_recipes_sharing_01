@@ -1,0 +1,6 @@
+<%= link_to user_recipe_bookmark_path(current_user, recipe, favor1.ids), method: :delete, remote: true do %>
+  <button class="btn btn-unbookmark">
+    <i class="fa fa-bookmark like-text"></i>
+    <span class="unbookmark-text"><%= t ".unbookmark_recipe" %></span>
+  </button>
+<% end %>
