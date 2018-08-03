@@ -4,10 +4,10 @@ class BookmarksController < ApplicationController
   def create
     return if current_user.bookmarked? @recipe
     if params[:status] == "2"
-      @favor1 = Favor.new status: "bookmark_recipe", user: current_user,
+      @bookmark = Favor.new status: "bookmark_recipe", user: current_user,
         targetable: @recipe
-      if @favor1.save
-        @favor1 = Favor.rela_bookmark current_user.id, @recipe
+      if @bookmark.save
+        @bookmark = Favor.rela_bookmark current_user.id, @recipe
         respond_to do |format|
           format.html {redirect_to @recipe}
           format.js
@@ -19,8 +19,8 @@ class BookmarksController < ApplicationController
 end
 
   def destroy
-    @favor1 = Favor.find_by id: params[:id]
-    @favor1.destroy
+    @bookmark = Favor.find_by id: params[:id]
+    @bookmark.destroy
     respond_to do |format|
       format.html {redirect_to @recipe}
       format.js

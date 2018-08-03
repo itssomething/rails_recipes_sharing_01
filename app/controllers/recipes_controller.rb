@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by id: params[:id]
     @user = @recipe.user
     @favor = Favor.rela current_user.id, @recipe
-    @favor1 = Favor.rela_bookmark current_user.id, @recipe
+    @bookmark = Favor.rela_bookmark current_user.id, @recipe
     @comments = @recipe.comments.all
     @comment = @recipe.comments.build
   end
