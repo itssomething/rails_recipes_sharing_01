@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_085849) do
+ActiveRecord::Schema.define(version: 2018_07_24_030746) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2018_08_02_085849) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "category_recipes", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories_recipes", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "recipe_id", null: false
-    t.index ["category_id", "recipe_id"], name: "index_category_recipes_on_category_id_and_recipe_id"
+    t.index ["category_id", "recipe_id"], name: "index_categories_recipes_on_category_id_and_recipe_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_085849) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "recipe_id"
-    t.index ["recipe_id"], name: "index_comments_on_recipe_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -42,32 +40,27 @@ ActiveRecord::Schema.define(version: 2018_08_02_085849) do
   end
 
   create_table "favors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "targetable_id"
+    t.integer "targetable_id"
     t.string "targetable_type"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.index ["targetable_id"], name: "index_favors_on_targetable_id"
-    t.index ["targetable_type", "targetable_id"], name: "index_favors_on_targetable_type_and_targetable_id"
-    t.index ["targetable_type"], name: "index_favors_on_targetable_type"
     t.index ["user_id"], name: "index_favors_on_user_id"
   end
 
   create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.string "amount"
     t.string "measurement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recipe_id"
-    t.string "ingredient_name"
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.text "description"
+    t.string "description"
     t.string "cover_photo"
     t.string "purpose"
     t.string "ready_in"
@@ -75,7 +68,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_085849) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.integer "people_num"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
@@ -91,17 +83,15 @@ ActiveRecord::Schema.define(version: 2018_08_02_085849) do
 
   create_table "steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "step_order"
-    t.text "content"
+    t.string "content"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "recipe_id"
-    t.json "photos"
-    t.index ["recipe_id"], name: "index_steps_on_recipe_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.text "address"
+    t.string "address"
     t.string "email"
     t.boolean "activated"
     t.string "password_digest"
@@ -113,11 +103,9 @@ ActiveRecord::Schema.define(version: 2018_08_02_085849) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
   add_foreign_key "favorite_recipes", "users"
   add_foreign_key "favors", "users"
   add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "recipes", "users"
-  add_foreign_key "steps", "recipes"
 end

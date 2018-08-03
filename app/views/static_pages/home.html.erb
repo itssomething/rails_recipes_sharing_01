@@ -2,34 +2,70 @@
   <!-- START JUMBOTRON -->
   <div class="jumbotron" id="main-jumbotron">
     <h1><%= t ".today" %></h1>
-    <%= form_for :reci, url: search_path, html: {class: "navbar-form"}, method: :get do |form| %>
-      <div class="">
-        <%= text_field_tag :reci, params[:reci], class: "form-control" %>
-        <%= submit_tag "Search", name: nil, class: "glyphicon glyphicon-search" %>
+    <form class="navbar-form" role="search">
+      <div class="input-group">
+        <input type="text" class="form-control"
+          placeholder= '<%= t ".search_placeholder" %>'
+          name="srch-term" id="srch-term">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
       </div>
-    <% end %>
+    </form>
     <p><%= t ".description" %></p>
   </div>
   <!-- END JUMBOTRON -->
+
   <!-- START CATEGORIES -->
-  <div class="row">
-    <%= render "category" %>
+  <div class="row text-center">
+    <div class="col-md-2">
+      <a href = "#" class = "btn btn-lg btn-primary">Breakfast</a>
+    </div>
   </div>
   <!-- END CATEGORIES -->
   <hr>
+
   <div class="row">
+
     <!-- START RECIPES -->
     <div class="col-md-9">
       <h1><%= t ".trending" %></h1>
       <div class="row">
-        <%= render "recipe" %>
+        <div class="col-md-4">
+          <div class="recipe">
+            <img src="http://via.placeholder.com/250x150" class="img-responsive img-rounded">
+            <div class="bottom-left">
+              <ul class="list-inline">
+                <li><i class="fa fa-bolt"></i> Khó</li>
+                <li><i class="fa fa-clock-o"></i> 10 <%= t ".hour" %></li>
+                <li><i class="fa fa-eye"></i> 2</li></ul>
+            </div>
+          </div>
+          <a href="#">Dế mèn xào chua ngọt</a>
+          <p><%= t ".recipe_by" %>
+            <a href="#">Như Quỳnh</a>
+          </p>
+        </div>
       </div>
     </div>
+
     <!-- END RECIPES -->
     <!-- START TOP MEMBER -->
     <div class="col-md-3">
       <h1><%= t ".top_member" %></h1>
-      <%= render "topuser" %>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="http://via.placeholder.com/50x50" class="img-responsive img-circle">
+        </div>
+        <div class="col-md-9">
+          <p>
+            <b>Chị Nguyệt</b>
+          </p>
+          <p>12 <%= t ".recipe" %> <span>|</span> 30 <%= t ".followers" %></p>
+        </div>
+      </div>
     </div>
     <!-- END TOP MEMBER -->
   </div>

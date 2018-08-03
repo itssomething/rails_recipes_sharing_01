@@ -1,7 +1,0 @@
-vi:
-  favors:
-    like:
-      like_recipe: "Thích công thức này"
-      failed: "Lỗi, vui lòng thử lại"
-    unlike:
-      unlike_recipe: "Bỏ thích"

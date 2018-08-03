@@ -1,19 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <% if @user.avatar.url %>
-        <%= image_tag(@user.avatar.to_s,
-          class: "img-responsive img-circle center-block avatar-show") %>
-      <% else %>
-        <%= image_tag("default_avatar.png",
-          class: "img-responsive img-circle center-block",
-          size: "#{Settings.img_size_fill}x#{Settings.img_size_fill}") %>
-      <% end %>
-      <h3 class="text-center"><%= @user.name %></h3>
+      <%= image_tag(@user.avatar,
+        class: "img-responsive img-circle center-block") %>
+      <h1 class="text-center"><%= @user.name %></h1>
         <ul class="list-inline text-center">
-          <li><i class="fa fa-users fa-2x"></i><br><%= @user.followers.count %>
-            <%=t ".follower" %>
-          </li>
+          <li><i class="fa fa-users fa-2x"></i><br>5 <%=t ".follower" %></li>
           <li><i class="fa fa-thumbs-up fa-2x"></i><br><%= t ".like" %></li>
         </ul>
       <p><i class="fa fa-envelope"></i>
@@ -27,18 +19,10 @@
       <p><i class="fa fa-calendar-check-o"></i>
         <%= t ".joined_at" %> <%= @user.created_at.strftime("%d/%m/%Y") %>
       </p>
-
-
-      <% if current_user? @user %>
-        <%= link_to edit_user_path, class: "btn btn-primary center-block" do %>
-          <i class="fa fa-pencil-square-o"></i> <%= t ".manage_account" %>
-        <% end %>
-      <% else %>
-        <% if logged_in? %>
-          <%= render "follow_form", user: @user %>
-        <% end %>
+      <%= link_to edit_user_path, class: "btn btn-primary center-block" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <%= t ".manage_account" %>
       <% end %>
-
     </div>
     <div class="col-md-9">
       <div class="row">
@@ -52,7 +36,7 @@
                     class="img-responsive">
                 </div>
                 <div class="col-md-8">
-                  <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+                  <h4><a href="#"><%= recipe.name %></a></h4>
                   <p>
                     <%= truncate recipe.description,
                     length: Settings.truncate_description %>

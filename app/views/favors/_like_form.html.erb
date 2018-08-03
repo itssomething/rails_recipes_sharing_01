@@ -1,5 +1,0 @@
-<% if current_user.liked? recipe %>
-  <div id="ajax-like-unlike"><%= render "favors/unlike", recipe: recipe, favor: favor %></div>
-<% else %>
-  <div id="ajax-like-unlike"><%= render "favors/like", recipe: recipe %></div>
-<% end %>

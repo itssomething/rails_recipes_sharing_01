@@ -1,7 +1,0 @@
-en:
-  favors:
-    like:
-      like_recipe: "Like this recipe"
-      failed: "Failed to like"
-    unlike:
-      unlike_recipe: "Unlike"

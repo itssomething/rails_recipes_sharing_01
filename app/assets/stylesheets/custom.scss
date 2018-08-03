@@ -1,9 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-$white: #ffffff;
-$black: #262626;
-
 .recipe {
   position: relative;
   text-align: center;
@@ -12,60 +9,6 @@ $black: #262626;
 .bottom-left {
   position: absolute;
   bottom: 2px;
-  left: 18px;
-  top: 225px;
-  color: $white
-}
-
-.category {
-  margin-top: 20px;
-  height: 44px;
-  width: 149px;
-}
-
-.item-recipe {
-  height: 370px;
-  width: 250px;
-}
-
-ul.thumbnails {
-    margin-bottom: 0px;
-}
-
-li { list-style-type:none;}
-
-.showhide {
-  display: none;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: black;
-  }
-}
-
-.logo {
-  height: 50px;
-  width: 150px;
-}
-
-.avatar-show {
-  width: 175px;
-}
-
-.like-text{
-  color: white;
-}
-
-.margin-10 {
-  margin: 10px 0;
+  left: 8px;
+  top: 125px;
 }
