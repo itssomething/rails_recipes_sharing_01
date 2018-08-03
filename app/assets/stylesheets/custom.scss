@@ -3,6 +3,7 @@
 
 $white: #ffffff;
 $black: #262626;
+$wine-color: #a31818;
 
 .recipe {
   position: relative;
@@ -68,4 +69,43 @@ li { list-style-type:none;}
 
 .margin-10 {
   margin: 10px 0;
+}
+
+.btn-bookmark {
+  border: $wine-color solid 1.5px;
+  background: $white;
+  color: $wine-color;
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 8px 15px;
+  :hover {
+    color: $wine-color;
+  }
+}
+
+.btn.btn-unbookmark {
+  @extend .btn-danger;
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 8px 15px;
+}
+
+#ajax-bookmark-unbookmark {
+  .bookmark-text :hover {
+    color: $wine-color;
+  }
+  .unbookmark-text :hover {
+    color: $white;
+  }
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px $wine-color; }
+  40% { box-shadow: 0 0 20px $wine-color; }
+  60% { box-shadow: 0 0 20px $wine-color; }
+  100% { box-shadow: 0 0 -10px $wine-color; }
+}
+
+.button-glow {
+  animation: glowing 3000ms infinite;
 }

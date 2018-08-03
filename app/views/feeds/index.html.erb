@@ -15,7 +15,7 @@
             <i class="fa fa-clock-o"></i>
             <%= time_ago_in_words(recipe.created_at) <<" "<< t(".ago") %>
           </p>
-          <%= image_tag recipe.cover_photo, class: "img-responsive" %>
+          <%= image_tag recipe.cover_photo.url.to_s, class: "img-responsive" %>
           <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
           <p><%= truncate recipe.description,
             length: Settings.truncate_description %>

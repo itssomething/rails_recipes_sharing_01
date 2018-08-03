@@ -21,3 +21,5 @@ en:
       submit: "Submit"
       delete: "Delete"
       confirm: "Are you sure?"
+      bookmark_recipe: "Bookmark this recipe"
+      unbookmark_recipe: "Unbookmark this recipe"

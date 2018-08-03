@@ -1,0 +1,6 @@
+<%= link_to user_recipe_bookmarks_path(current_user, recipe, status: 2), method: :post, remote: true do %>
+  <button class="btn-bookmark button-glow">
+    <i class="fa fa-bookmark-o"></i>
+    <span class="bookmark-text"><%= t ".bookmark_recipe" %></span>
+  </button>
+<% end %>

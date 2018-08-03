@@ -1,0 +1,6 @@
+en:
+  bookmarks:
+    bookmark:
+      bookmark_recipe: "Bookmark this recipe"
+    unbookmark:
+      unbookmark_recipe: "Remove bookmark"

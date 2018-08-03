@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :users do
       resources :recipes do
         resources :favors, only: [:create, :destroy]
+        resources :bookmarks, only: [:create, :destroy]
       end
       member do
         get :following, :followers
