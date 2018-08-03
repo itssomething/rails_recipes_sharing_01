@@ -1,8 +1,26 @@
 class UsersController < ApplicationController
-  before_action :find_user
+  before_action :find_user, except: [:new, :create, :index]
+  before_action :correct_user, except: [:show, :index]
+
   def show
     @recipes = @user.recipes.desc.page(params[:page])
                     .per Settings.user_per_show
+  end
+
+  def new
+    redirect_to root_path if logged_in?
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_params
+    if @user.save
+      flash[:success] = t ".welcome"
+      log_in @user
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def edit; end
@@ -17,13 +35,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.top_user
+  end
+
   private
 
   def find_user
     @user = User.find_by id: params[:id]
+
     return if @user
     flash[:danger] = t ".cant_find"
     redirect_to root_path
+  end
+
+  def logged_in_user
+    return if logged_in?
+    flash[:danger] = t "please_login"
+    redirect_to login_url
+  end
+
+  def correct_user
+    redirect_to root_path unless current_user? @user
   end
 
   def user_params

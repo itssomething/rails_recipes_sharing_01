@@ -1,1 +1,10 @@
 en:
+  invalid_number: "Invalid number"
+  over_limit_file_size: "File size limit exceeded"
+  errors:
+    messages:
+      extension_whitelist_error: "File format unaccepted"
+      mini_magick_processing_error: "Problem orcurred during uploading.
+        Please try again"
+    format: "%{message}"
+  empty_comment_alert: "Comment must not be empty"

@@ -1,0 +1,6 @@
+  <%= link_to user_recipe_favors_path(current_user, recipe), method: :post, remote: true do %>
+    <button class="btn btn-default">
+      <i class="fa fa-thumbs-o-up"></i>
+      <span><%= t ".like_recipe" %></span>
+    </button>
+  <% end %>

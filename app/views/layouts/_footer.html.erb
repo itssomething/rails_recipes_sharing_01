@@ -5,10 +5,10 @@
         <b><%= t ".statistics" %></b>
         <div class="row">
           <div class="col-md-6">
-            <p><b>1000</b> <%= t ".recipe" %></p>
+            <p><b><%= Recipe.count %></b> <%= t ".recipe" %></p>
           </div>
           <div class="col-md-6">
-            <p><b>12</b> <%= t ".members" %></p>
+            <p><b><%= User.count %></b> <%= t ".members" %></p>
           </div>
         </div>
         <div class="row">
@@ -61,7 +61,9 @@
         <ul class="list-inline">
           <li><a href="#"><i class="fa fa-facebook-square fa-5x"></i></a></li>
           <li><a href="#"><i class="fa fa-facebook-messenger fa-5x"></i></a></li>
-          <li><a href="#"><i class="fa fa-github fa-5x"></i></a></li>
+          <li><a href="https://github.com/framgia/rails_recipes_sharing_01">
+            <i class="fa fa-github fa-5x"></i></a>
+          </li>
         </ul>
       </div>
     </div>

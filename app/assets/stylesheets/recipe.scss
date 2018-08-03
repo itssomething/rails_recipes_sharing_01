@@ -1,0 +1,84 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+$body-bg: #f0f0f0;
+$field-label: #d43f3a;
+body {
+  background-color: $body-bg;
+  margin-top: 120px;
+}
+.new_recipe {
+  padding: 20px 20px 100px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 0 100px;
+}
+
+.field-label {
+  border-left: 3px solid $field-label;
+  padding: 3px 8px;
+  margin: 0 0 10px 20px
+}
+
+.field-input {
+  margin: 0 0 30px;
+}
+
+.submit-button{
+  float: right;
+  padding: 8px 20px 6px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  min-height: 100px;
+}
+.step-order {
+  color: red ;
+}
+
+.ingredient-item {
+  color: green ;
+}
+
+.ingredient-amount {
+  color: grey ;
+  font-size: 14px ;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+#calc-amount {
+  width: 66px;
+}
+
+.form-calc {
+  margin-top: ‒10;
+  padding-top: 20px;
+}
+
+.same-purpose {
+  width: 295px;
+}
+
+.main-recipe {
+  width: 100%;
+}
+
+.user-info {
+  width: 250px
+}
+
+.cmt {
+  padding: 10px 0;
+}
+
+.comment :hover {
+  background: white;
+}

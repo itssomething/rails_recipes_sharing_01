@@ -33,3 +33,7 @@ config/environments/*.local.yml
 config/settings/development.yml
 config/settings/production.yml
 config/settings/test.yml
+public/uploads/*
+public/javascripts/i18n.js
+public/javascripts/translations.js
+/.idea/*

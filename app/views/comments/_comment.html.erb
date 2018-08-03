@@ -1,0 +1,15 @@
+<div class="row cmt" id = "comment-<%= comment.id %>">
+  <div class="col-md-2">
+    <%= image_tag comment.user.avatar.url.to_s, class: "img-responsive pull-right img-circle", size: "50x50" %>
+  </div>
+  <div class="col-md-8">
+    <strong><%= comment.user.name %></strong>
+    <br>
+    <p><%= comment.content %></p>
+  </div>
+  <div class="col-md-2">
+    <% if comment.user.current_user? current_user %>
+      <p><%= link_to t(".delete"), recipe_comment_path(@recipe, comment), method: :delete, remote: :true, data: {confirm: t(".confirm")}, class: "delete-comment" %></p>
+    <% end %>
+  </div>
+</div>

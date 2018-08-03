@@ -1,35 +1,66 @@
 <!-- START NAVBAR -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <%= link_to image_tag("https://bit.ly/2mRfHva",
+        class: "img-responsive logo navbar-left"), root_path %>
       <ul class="nav navbar-nav nav-pills">
-        <a href="#" class="navbar-left">
-          <img src="https://www.cooky.vn/Content/img/Cooky-Slogan-Official-Design.80.png" class = "img-responsive">
-        </a>
         <li>
-          <a href="#" class="active">
+          <%= link_to root_path do %>
             <i class="fa fa-home"></i> <%= t ".home" %></a>
+          <% end %>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-cutlery"></i> <%= t ".recipe" %></a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-users"></i> <%= t ".top_member" %></a>
-        </li>
-      </ul>
 
+        <li><%= link_to recipes_path do %>
+          <i class="fa fa-cutlery"></i>
+          <span><%= t ".recipe" %></span>
+        <% end %>
+        </li>
+
+        <li><%= link_to "#" do %>
+          <i class="fa fa-users"></i>
+          <span><%= t ".top_member" %></span>
+        <% end %>
+        </li>
+
+        <% if logged_in? %>
+          <li><%= link_to feed_path do %>
+            <i class="fa fa-rss"></i>
+            <span><%= t "feeds.index.feed" %></span>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
       <!-- NAVBAR RIGHT -->
       <ul class="nav navbar-nav navbar-right">
-        <a href="#" class="btn btn-default navbar-btn">
-          <i class="fa fa-plus-square"></i> <%= t ".create_recipe" %></a>
-        <a href="#" class="btn btn-default navbar-btn">
-          <i class="fa fa-sign-out"></i> <%= t ".logout" %></a>
-        <a href="#" class="btn btn-default navbar-btn">
-          <i class="fa fa-sign-in"></i> <%= t ".login" %></a>
-        <a href="#" class="btn btn-default navbar-btn">
-          <i class="fa fa-address-book"></i> <%= t ".signup" %></a>
+        <% if logged_in? %>
+          <%= link_to new_recipe_path, class: "btn btn-default navbar-btn" do %>
+            <i class="fa fa-plus-square"></i> <%= t ".create_recipe" %>
+          <% end %>
+          <button class="btn btn-default dropdown-toggle" type="button"
+            data-toggle="dropdown">
+          <%= current_user.name %>
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to user_path(current_user) do %>
+                <i class="fa fa-user"></i> <%= t ".info" %></a>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i> <%= t ".logout" %></a>
+              <% end %>
+            </li>
+          </ul>
+        <% else %>
+          <%= link_to login_path, class: "btn btn-default navbar-btn" do %>
+            <i class="fa fa-sign-in"></i> <%= t ".login" %></a>
+          <% end %>
+          <%= link_to signup_path, class: "btn btn-default navbar-btn" do %>
+            <i class="fa fa-address-book"></i> <%= t ".signup" %>
+          <% end %>
+        <% end %>
         <!-- END NAVBAR RIGHT -->
       </ul>
     </div>

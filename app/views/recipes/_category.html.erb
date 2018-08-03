@@ -1,0 +1,9 @@
+<div class = "row">
+  <% @categories.each do |category| %>
+    <div class = "col-md-3">
+      <%= label_tag :checkbox, category.name %>
+      <%= check_box_tag("recipe[category_ids][]", category.id, false,
+        class: "checkbox") %>
+    </div>
+  <% end %>
+</div>
